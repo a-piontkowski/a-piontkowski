@@ -1,0 +1,33 @@
+
+body {
+  background-color: #acd7a2a0;
+}
+.center {
+    display: block;
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+h1, h2, h3{
+    text-align: center;
+    font-family: courier new;
+}
+p{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-family: courier new;
+}
+table {
+    text-align: center; 
+    margin: 0 auto; 
+    border: 1px solid black;
+    font-family: courier new;
+}
+table tr, table td {
+    text-align: left;
+    border: 1px solid;
+    border-collapse: collapse; 
+    font-family: courier new;
+}
