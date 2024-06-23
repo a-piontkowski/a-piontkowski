@@ -25,14 +25,15 @@ function shuffle() {
 function clickTile(row, column) {
 	var cell = document.getElementById("cell"+row+column);
 	var tile = cell.className;
+    var count = 0;
 	
 	if(tile!="tile16") {
 		//check if the white tile is on the right
 		if(column<4) {
 			if(document.getElementById("cell"+row+(column+1)).className=="tile16") {
 				swapTiles("cell"+row+column, "cell"+row+(column+1));
-
-                setTimeout(() => {Win()}, 3000); //async global function to delat alert window execution
+                count =+ 1;
+                setTimeout(() => {Win(count)}, 1000); //async global function to delat alert window execution
 				return;
 			}
 		}
@@ -40,6 +41,8 @@ function clickTile(row, column) {
 		if(column>1) {
 			if(document.getElementById("cell"+row+(column-1)).className=="tile16") {
 				swapTiles("cell"+row+column,"cell"+row+(column-1));
+                count =+ 1;
+                setTimeout(() => {Win(count)}, 1000); //async global function to delat alert window execution
 				return;
 			}
 		}
@@ -47,6 +50,8 @@ function clickTile(row, column) {
 		if(row > 1) {
 			if(document.getElementById("cell"+(row-1)+column).className=="tile16") {
 				swapTiles("cell"+row+column, "cell"+(row-1)+column);
+                count =+ 1;
+                setTimeout(() => {Win(count)}, 1000); //async global function to delat alert window execution
 				return;
 			}
 		}
@@ -55,14 +60,17 @@ function clickTile(row, column) {
 		if(row < 4) {
 			if(document.getElementById("cell"+(row+1)+column).className=="tile16") {
 				swapTiles("cell"+row+column, "cell"+(row+1)+column);
+                count =+ 1;
+                setTimeout(() => {Win(count)}, 1000); //async global function to delat alert window execution
 				return;
 			}
 		}
 	}
 }
 
-function Win()
+function Win(count)
 {
+    Number_of_moves = count;
 //Write some code logic here that determines if the tiles are all in
 //order, hence the puzzle is won. If so, alert to the user that they won.
     if(document.getElementById("cell11").className=="tile1" 
@@ -82,9 +90,8 @@ function Win()
     && document.getElementById("cell43").className=="tile15"
     && document.getElementById("cell44").className=="tile16"
     )
-
     {
-    window.alert("Congratulations!!\n Amount spent on current game inseconds: " + time +"\n Number of moves so far: " + Number_of_moves+"\nWouldyou like to play again?")
-    window.location.reload(); //Reload page upon confirmation
+        window.alert("Congratulations!!\n Amount spent on current game inseconds: " + time +"\n Number of moves so far: " + Number_of_moves+"\nWouldyou like to play again?")
+        window.location.reload(); //Reload page upon confirmation
     }
 }
