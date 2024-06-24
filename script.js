@@ -91,7 +91,7 @@ function Win(count)
     && document.getElementById("cell44").className=="tile16"
     )
     {
-        window.alert("Congratulations!!\n Amount spent on current game inseconds: " + time +"\n Number of moves so far: " + Number_of_moves+"\nWouldyou like to play again?")
+        window.alert("Congratulations!!\nNumber of moves to win: " + Number_of_moves+"\nWouldyou like to play again?")
         window.location.reload(); //Reload page upon confirmation
     }
 }
